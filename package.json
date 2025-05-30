@@ -1,0 +1,21 @@
+
+{
+  "name": "company-intranet-backend",
+  "version": "1.0.0",
+  "description": "Node.js Express backend for the Company Intranet Platform.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "@pinecone-database/pinecone": "^2.2.0",
+    "node-fetch": "^2.7.0",
+    "@google/genai": "^0.14.0",
+    "dotenv": "^16.4.5"
+  },
+  "author": "AI Assistant",
+  "license": "ISC"
+}
