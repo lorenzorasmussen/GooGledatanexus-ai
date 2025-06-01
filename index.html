@@ -1,23 +1,14 @@
 
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.2.0",
-    "react-markdown": "https://esm.sh/react-markdown@9.0.1?bundle",
-    "remark-gfm": "https://esm.sh/remark-gfm@4.0.0?bundle"
-  }
-}
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Intranet - Dashboard (React)</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -1009,7 +1000,7 @@
         }
     </style>
 </head>
-<body>
+
     <div id="root"></div>
     <!-- 
       IMPORTANT: The script below loads index.tsx directly.
@@ -1021,6 +1012,6 @@
       browsers do not natively execute TypeScript.
     -->
     <script type="module" src="/index.tsx"></script>
+
 </body>
-</html><link rel="stylesheet" href="index.css">
-<script src="index.tsx" type="module"></script>
+</html>

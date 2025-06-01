@@ -14,6 +14,14 @@ const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON bodies
 
+// Serve static files from the React app's build directory
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// All other GET requests not handled by API routes should return the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 // --- Persistent Chat History ---
 const CHAT_HISTORY_FILE = path.join(__dirname, 'chat_history.json');
 

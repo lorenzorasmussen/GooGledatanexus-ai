@@ -1,4 +1,3 @@
-
 {
   "name": "company-intranet-backend",
   "version": "1.0.0",
@@ -6,16 +5,26 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "build": "vite build"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "@pinecone-database/pinecone": "^2.2.0",
-    "node-fetch": "^2.7.0",
     "@google/genai": "^0.14.0",
-    "dotenv": "^16.4.5"
+    "@pinecone-database/pinecone": "^6.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0",
+    "package.json": "^2.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "author": "AI Assistant",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.0",
+    "vite": "^6.3.5"
+  }
 }

@@ -2,6 +2,16 @@
 import { API_BASE_URL } from '../utils';
 import { WikiPage, WikiSearchResultItem } from '../types';
 
+// Example in a service file or component
+const pineconeApiKey = import.meta.env.VITE_PINECONE_API_KEY as string;
+
+if (!pineconeApiKey) {
+  console.error('VITE_PINECONE_API_KEY is not set in .env.local');
+  // Handle error, e.g., display a message to the user
+}
+
+// Use pineconeApiKey for client-side operations (if necessary)
+
 export const searchWikiPages = async (query: string): Promise<WikiSearchResultItem[]> => {
   const response = await fetch(`${API_BASE_URL}/api/wiki/search`, {
     method: 'POST',
