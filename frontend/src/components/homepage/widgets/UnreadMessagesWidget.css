@@ -1,0 +1,40 @@
+.unread-messages-widget .widget-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.unread-messages-widget .messages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.unread-messages-widget .message-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.unread-messages-widget .message-item:last-child {
+  border-bottom: none;
+}
+
+.unread-messages-widget .message-sender {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.unread-messages-widget .message-subject {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.unread-messages-widget .error-message {
+  color: var(--color-text-error);
+  font-size: 0.9rem;
+}

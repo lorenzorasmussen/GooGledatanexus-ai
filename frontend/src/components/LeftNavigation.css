@@ -1,0 +1,301 @@
+.left-navigation {
+  width: 250px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+  position: relative; /* For collapse button positioning */
+  resize: horizontal; /* Enable horizontal resizing */
+  overflow: auto; /* Add scrollbars if content overflows during resize */
+  min-width: 70px; /* Minimum width for collapsed state */
+  max-width: 500px; /* Maximum width for expanded state */
+}
+
+.left-navigation.collapsed {
+  width: 70px;
+}
+
+.nav-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.left-navigation.collapsed .nav-header {
+  justify-content: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.left-navigation.collapsed .logo {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.logo-accent {
+  color: #8a2be2; /* BlueViolet */
+}
+
+.collapse-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.collapse-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left-navigation.collapsed .collapse-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg); /* Rotate icon when collapsed */
+}
+
+.nav-links,
+.nav-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links {
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+.nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-item.active a {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-item a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px; /* Add some space between icon and label */
+  flex-shrink: 0;
+}
+
+.nav-label {
+  display: block; /* Show labels by default */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.left-navigation.collapsed .nav-label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.nav-footer {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.low-memory-toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.low-memory-toggle-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.left-navigation.collapsed .low-memory-toggle-item,
+.left-navigation.collapsed .theme-toggle-item {
+  justify-content: center;
+}
+
+.left-navigation.collapsed .low-memory-toggle-item .nav-label,
+.left-navigation.collapsed .theme-toggle-item .nav-label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.low-memory-toggle-item .nav-label,
+.theme-toggle-item .nav-label {
+  margin-right: 15px; /* Space between label and toggle */
+}
+
+.toggle-switch-container {
+  flex-shrink: 0;
+}
+
+/* Toggle Switch Styles (for Low Memory and Theme) */
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the toggle to the right */
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px; /* Rounded slider */
+}
+
+.toggle-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%; /* Circular knob */
+}
+
+input:checked + .toggle-switch-slider {
+  background-color: #2196F3;
+}
+
+input:focus + .toggle-switch-slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .toggle-switch-slider:before {
+  transform: translateX(20px);
+}
+
+/* Styles for the theme toggle item */
+.theme-toggle-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.theme-toggle-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-item .nav-label {
+  margin-right: 10px; /* Space between label and toggle */
+}
+
+/* Adjustments for collapsed state */
+.left-navigation.collapsed .theme-toggle-item .nav-label {
+  display: none;
+}
+
+.left-navigation.collapsed .theme-toggle-item .toggle-switch-container {
+  margin: 0 auto; /* Center the toggle when collapsed */
+}
+
+/* General glass-morphism styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic layout for app-container and dashboard-area */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #1a1a1a; /* Dark background */
+  color: #fff;
+  font-family: 'Inter', sans-serif; /* Assuming Inter font is available or imported */
+}
+
+.dashboard-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.welcome-hub {
+  padding: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.welcome-hub h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.welcome-hub p {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.8);
+}

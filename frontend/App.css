@@ -1,0 +1,168 @@
+/* General glass-morphism styles */
+.glass-panel {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: var(--glass-shadow);
+}
+
+/* Basic layout for app-container and dashboard-area */
+.app-container {
+  display: flex;
+  min-height: 100vh; /* Use min-height to allow content to expand */
+  background-color: #0a0a0a; /* Consistent dark background */
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--background-color); /* Apply background to body as well */
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.dashboard-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #0a0a0a; /* Consistent dark background */
+}
+
+.welcome-hub {
+  padding: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.welcome-hub h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.welcome-hub p {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Theme variables */
+:root {
+  --background-color: #0a0a0a; /* Even darker background */
+  --text-color: #e0e0e0; /* Slightly softer white text */
+  --glass-background: rgba(255, 255, 255, 0.05); /* Less transparent glass effect */
+  --glass-border: rgba(255, 255, 255, 0.1); /* Lighter, more subtle border */
+  --glass-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* More pronounced, darker shadow */
+  --logo-accent-color: #00c4ff; /* A more vibrant, modern blue */
+  --secondary-text-color: #a0a0a0; /* For secondary text elements */
+  --card-background: rgba(15, 15, 15, 0.7); /* Darker card background */
+  --card-border: rgba(255, 255, 255, 0.08); /* Subtle card border */
+  --hover-color: rgba(255, 255, 255, 0.05); /* Hover effect for interactive elements */
+  --gradient-start: #1a2a6c; /* For potential gradients */
+  --gradient-end: #b21f1f; /* For potential gradients */
+}
+
+/* General styles for a modern, darker UI */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-panel {
+  background: var(--glass-background);
+  backdrop-filter: blur(15px); /* Increased blur for more depth */
+  border: 1px solid var(--glass-border);
+  border-radius: 12px; /* Slightly less rounded corners */
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease-in-out; /* Smooth transitions for interactions */
+}
+
+.glass-panel:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.app-container {
+  background: #0a0a0a; /* Solid dark background */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Typography adjustments for better readability on dark backgrounds */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+p {
+  color: var(--secondary-text-color);
+  line-height: 1.6;
+}
+
+/* Buttons and interactive elements */
+button {
+  background-color: var(--logo-accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0099cc; /* Slightly darker accent on hover */
+}
+
+/* Card-like elements */
+.card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+[data-theme='light'] {
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --glass-background: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --logo-accent-color: #0056b3; /* Lighter accent color */
+}
+
+/* Specific styles for elements that need to adapt to theme */
+.logo-accent {
+  color: var(--logo-accent-color);
+}
+
+.welcome-hub h1 {
+  color: var(--text-color);
+}
+
+.welcome-hub p {
+  color: var(--text-color-secondary); /* Define this if needed */
+}

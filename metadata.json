@@ -1,6 +1,0 @@
-{
-  "name": "DataNexus AI ",
-  "description": "An AI Prompt Engineering Studio for DataNexus, powered by Google Gemini. Craft, test, and refine prompts with advanced controls and real-time streaming responses. Optimized for various workflows including those on Intel-based systems.",
-  "requestFramePermissions": [],
-  "prompt": ""
-}

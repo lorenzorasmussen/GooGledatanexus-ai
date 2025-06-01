@@ -1,0 +1,13 @@
+.calendar-widget .widget-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.calendar-widget .calendar-date {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-align: center;
+}

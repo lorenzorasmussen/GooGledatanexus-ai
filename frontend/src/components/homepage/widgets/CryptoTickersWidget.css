@@ -1,0 +1,41 @@
+.crypto-tickers-widget .widget-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.crypto-tickers-widget .crypto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.crypto-tickers-widget .crypto-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.crypto-tickers-widget .crypto-item:last-child {
+  border-bottom: none;
+}
+
+.crypto-tickers-widget .crypto-symbol {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.crypto-tickers-widget .crypto-price {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.crypto-tickers-widget .error-message {
+  color: var(--color-text-error);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,56 @@
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: var(--shadow-elevation-low);
+  backdrop-filter: blur(5px); /* Subtle blur for message bubbles */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.8)); /* Blue gradient for user messages */
+  color: white;
+  border-bottom-right-radius: 2px; /* Sharpen one corner for a modern look */
+}
+
+.ai-message {
+  align-self: flex-start;
+  background: linear-gradient(135deg, rgba(50, 50, 50, 0.8), rgba(30, 30, 30, 0.8)); /* Dark grey gradient for AI messages */
+  color: var(--color-text-primary);
+  border-bottom-left-radius: 2px; /* Sharpen one corner for a modern look */
+}
+
+.message-content {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.message-timestamp {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6); /* Lighter timestamp for contrast */
+  align-self: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-message {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-message {
+    max-width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .message-timestamp {
+    font-size: 0.65rem;
+  }
+}

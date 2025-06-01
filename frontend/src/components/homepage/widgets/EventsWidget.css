@@ -1,0 +1,40 @@
+.events-widget .widget-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.events-widget .events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.events-widget .event-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.events-widget .event-item:last-child {
+  border-bottom: none;
+}
+
+.events-widget .event-title {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.events-widget .event-datetime {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.events-widget .error-message {
+  color: var(--color-text-error);
+  font-size: 0.9rem;
+}

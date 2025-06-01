@@ -1,0 +1,125 @@
+.chat-bubble-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  will-change: transform, width, height;
+  border-radius: 0; /* No rounded corners for full-width bar */
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-high);
+  background: rgba(0, 0, 0, 0.3); /* Less transparent glass effect */
+  backdrop-filter: blur(15px); /* Slightly less blur */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* More visible border */
+  border-bottom: none; /* No bottom border */
+  height: 0; /* Start minimized */
+}
+
+
+
+.chat-bubble-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-accent-primary); /* Accent color for the icon */
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  position: absolute; /* Position relative to wrapper */
+  bottom: 20px; /* Space from the bottom of the screen */
+  right: 20px; /* Space from the right of the screen */
+}
+
+.chat-bubble-icon:hover {
+  transform: scale(1.05);
+  background-color: var(--color-accent-dark);
+}
+
+.chat-bubble-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.chat-bubble-expanded {
+  width: 100%; /* Full width */
+  height: 450px; /* Fixed height when expanded */
+  display: flex;
+  flex-direction: column;
+  border-radius: 0; /* No rounded corners for full-width bar */
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3); /* Consistent darker glass background */
+  position: fixed; /* Ensure it stays at the bottom */
+  bottom: 0;
+  left: 0; /* Extend across the bottom */
+  right: 0;
+}
+
+.chat-bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.4); /* Even darker header */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* More subtle border */
+  color: var(--color-text-primary);
+}
+
+.chat-bubble-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chat-bubble-header button {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.chat-bubble-header button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+.chat-bubble-header button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .chat-bubble-wrapper {
+    right: 0;
+    left: 0;
+  }
+
+  .chat-bubble-expanded {
+    width: 100vw; /* Take up full width on smaller screens */
+    height: 80vh; /* Adjust height for smaller screens */
+    right: 0;
+    left: 0;
+  }
+
+  .chat-bubble-icon {
+    width: 50px;
+    height: 50px;
+    bottom: 10px; /* Adjust space from the bottom */
+    right: 10px; /* Adjust space from the right */
+  }
+
+  .chat-bubble-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+}

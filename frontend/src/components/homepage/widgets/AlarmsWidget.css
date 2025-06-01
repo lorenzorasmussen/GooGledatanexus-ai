@@ -1,0 +1,41 @@
+.alarms-widget .widget-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.alarms-widget .alarms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.alarms-widget .alarm-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alarms-widget .alarm-item:last-child {
+  border-bottom: none;
+}
+
+.alarms-widget .alarm-time {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.alarms-widget .alarm-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.alarms-widget .error-message {
+  color: var(--color-text-error);
+  font-size: 0.9rem;
+}
